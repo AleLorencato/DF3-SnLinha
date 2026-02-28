@@ -16,6 +16,7 @@
     <url/>
     <licenses>
         <license/>
+
     </licenses>
     <developers>
         <developer/>
@@ -88,8 +89,18 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <wsdlDirectory>${basedir}/src/main/wsdl</wsdlDirectory>
-                    <packageName>com.example.consumingwebservice.wsdl</packageName>
+                    <wsdlUrls>
+                        <wsdlUrl>http://alsb3-soa/Linha?wsdl</wsdlUrl>
+                    </wsdlUrls>
+                    <packageName>com.ale.clientes.wsdl</packageName>
+                    <vmArgs>
+                        <vmArg>-Djavax.xml.accessExternalSchema=all</vmArg>
+                        <vmArg>-Djavax.xml.accessExternalDTD=all</vmArg>
+                    </vmArgs>
+                    <args>
+                        <arg>-extension</arg>
+                        <arg>-B-XautoNameResolution</arg>
+                    </args>
                 </configuration>
             </plugin>
             <plugin>
